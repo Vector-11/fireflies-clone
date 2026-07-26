@@ -92,10 +92,8 @@ cd backend && python -m pytest
 cd frontend && npm run typecheck
 ```
 
-Type checking runs as its own step rather than inside `next build`. It is the
-most memory-hungry part of the build and was being killed on the deploy host
-while passing locally, so the check was moved to where checks belong — it still
-has to pass, just not during deployment.
+`next build` type-checks as part of the build, so `typecheck` is there for
+running the check on its own without a full build.
 
 ---
 
