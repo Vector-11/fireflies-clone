@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+/*
+  Design tokens lifted from the live Fireflies.ai stylesheet rather than
+  eyeballed from screenshots: the purple ramp, the grey ramp, the accent hues
+  and — the detail that does most of the work — a 4px button radius. Fireflies'
+  UI is crisp and slightly squared off, so the usual rounded-xl default reads as
+  the wrong product immediately.
+
+  Their own architecture layers semantic names (--light-text-primary,
+  --light-interactive-primary-default) on top of raw ramps. That split is
+  mirrored below: raw scales go in @theme so Tailwind generates utilities from
+  them, semantic aliases sit in :root.
+*/
+
+@theme {
+  /* Brand purple — #7a5af8 is the button and active-state colour. */
+  --color-brand-25: #fafaff;
+  --color-brand-50: #f4f3ff;
+  --color-brand-100: #ebe9fe;
+  --color-brand-200: #d9d6fe;
+  --color-brand-300: #bdb4fe;
+  --color-brand-400: #9b8afb;
+  --color-brand-500: #7a5af8;
+  --color-brand-600: #6938ef;
+  --color-brand-700: #5925dc;
+  --color-brand-800: #4a1fb8;
+  --color-brand-900: #3e1c96;
+
+  --color-grey-25: #fcfcfd;
+  --color-grey-50: #f9fafb;
+  --color-grey-100: #f2f4f7;
+  --color-grey-200: #eaecf0;
+  --color-grey-300: #d0d5dd;
+  --color-grey-400: #98a2b3;
+  --color-grey-500: #667085;
+  --color-grey-600: #475467;
+  --color-grey-700: #344054;
+  --color-grey-800: #1d2939;
+  --color-grey-900: #101828;
+  --color-navy: #100730;
+
+  --color-teal-50: #f0fdf9;
+  --color-teal-100: #ccfbef;
+  --color-teal-500: #15b79e;
+  --color-teal-600: #0e9384;
+
+  --color-fuchsia-50: #fdf4ff;
+  --color-fuchsia-100: #fbe8ff;
+  --color-fuchsia-500: #d444f1;
+  --color-fuchsia-600: #ba24d5;
+
+  --color-blue-50: #eff8ff;
+  --color-blue-100: #d1e9ff;
+  --color-blue-500: #2e90fa;
+  --color-blue-600: #1570ef;
+
+  --color-cyan-50: #ecfdff;
+  --color-cyan-500: #06aed4;
+  --color-cyan-600: #088ab2;
+
+  --color-success-50: #ecfdf3;
+  --color-success-100: #d1fadf;
+  --color-success-500: #12b76a;
+  --color-success-600: #039855;
+  --color-success-700: #027948;
+
+  --color-warning-50: #fffaeb;
+  --color-warning-100: #fef7c3;
+  --color-warning-500: #f79009;
+  --color-warning-600: #dc6803;
+  --color-warning-700: #b54708;
+
+  --color-danger-50: #fef3f2;
+  --color-danger-100: #fee4e2;
+  --color-danger-500: #f04438;
+  --color-danger-600: #d92d20;
+  --color-danger-700: #b32318;
+
+  --color-orange-50: #fef6ee;
+  --color-orange-100: #fdead7;
+  --color-orange-500: #ef6820;
+  --color-orange-600: #e04f16;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-dm-sans), var(--font-inter), ui-sans-serif, sans-serif;
+
+  /* Fireflies' radius ramp. Buttons and inputs use the 4px step. */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+}
+
+:root {
+  /* Semantic layer, named after Fireflies' own tokens. */
+  --page-background: #ffffff;
+  --border-subtle: #f2f4f7;
+  --border-solid: #eaecf0;
+  --text-primary: #101828;
+  --text-muted: #667085;
+
+  /* Eight stable speaker colours, all drawn from the Fireflies ramps. The
+     index is stored per speaker in the database, so a voice keeps the same
+     colour across reloads and across every view. */
+  --speaker-0: #7a5af8;
+  --speaker-1: #15b79e;
+  --speaker-2: #2e90fa;
+  --speaker-3: #d444f1;
+  --speaker-4: #ef6820;
+  --speaker-5: #12b76a;
+  --speaker-6: #088ab2;
+  --speaker-7: #dc6803;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--page-background);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+/* Restrained scrollbars — the transcript and sidebar both scroll a lot and the
+   platform defaults are visually loud next to this palette. */
+@media (pointer: fine) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #d0d5dd transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #d0d5dd;
+    border-radius: 999px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Search highlighting. `mark` is used both for client-side transcript
+   highlighting and for the server's FTS5 snippet() output, so the two look
+   identical wherever they appear. */
+mark {
+  background-color: #fef7c3;
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+mark[data-active="true"] {
+  background-color: #f79009;
+  color: #fff;
+}
