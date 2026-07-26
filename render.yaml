@@ -1,0 +1,26 @@
+# Render blueprint for the FastAPI backend.
+# The Next.js frontend deploys separately to Vercel — see the README.
+services:
+  - type: web
+    name: fireflies-clone-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      # The free plan has no persistent disk, so this file lives in the
+      # container and is recreated (and reseeded) on every cold start.
+      - key: DATABASE_URL
+        value: sqlite:///./fireflies.db
+      - key: SEED_ON_STARTUP
+        value: "true"
+      # Set this to the deployed Vercel URL after the frontend is live.
+      - key: CORS_ORIGINS
+        value: http://localhost:3000
+      # Allows Vercel preview deployments, whose subdomain changes per build.
+      - key: CORS_ORIGIN_REGEX
+        value: https://.*\.vercel\.app
