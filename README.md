@@ -12,8 +12,13 @@ derived from them on the server.
 
 | | |
 |---|---|
-| **Live demo** | _add your Vercel URL here_ |
-| **API** | _add your Render URL here_ · interactive docs at `/docs` |
+| **Live demo** | <https://fireflies-clone-priyanshugiri6291-7326s-projects.vercel.app> |
+| **API** | <https://fireflies-clone-api-zqef.onrender.com> · interactive docs at [`/docs`](https://fireflies-clone-api-zqef.onrender.com/docs) |
+
+> The API is on a free tier that sleeps after inactivity, so the very first
+> request can take up to a minute while the instance wakes. Subsequent requests
+> are immediate. The library shows a skeleton state rather than a blank screen
+> while that happens.
 
 ---
 
@@ -302,6 +307,10 @@ person and 23:00 to another, and "Today" flips depending on who opens the page.
 
 The repo contains `render.yaml`; point Render at it as a Blueprint, or create a
 web service manually with:
+
+> Render subdomains are globally unique, and `fireflies-clone-api` was already
+> taken, so the live service carries a suffix. Rename the service in
+> `render.yaml` if you redeploy this yourself.
 
 - Root directory `backend`
 - Build `pip install -r requirements.txt`
