@@ -1,0 +1,73 @@
+Dan Oyelaran: Thanks for coming in, Arjun. This is a systems design conversation, about 45 minutes.
+Dan Oyelaran: There's no single right answer, I mostly want to hear how you think.
+Arjun Balan: Sounds good. Should I ask questions as I go or hold them?
+Dan Oyelaran: Ask as you go. A candidate who doesn't ask anything is a bad sign, honestly.
+Arjun Balan: Noted.
+Dan Oyelaran: So, design a system that ingests meeting recordings and produces searchable transcripts.
+Dan Oyelaran: Assume ten thousand meetings a day, average forty minutes.
+Arjun Balan: Before I draw anything, can I check a few constraints?
+Dan Oyelaran: Please.
+Arjun Balan: Is transcription synchronous from the user's point of view, or can it be a background job?
+Dan Oyelaran: Background. Users accept waiting a few minutes after a meeting ends.
+Arjun Balan: That changes the design a lot. It means I can queue and I don't need to over-provision for peak.
+Arjun Balan: Second question, what's the read pattern? Are people searching constantly or mostly reading one transcript?
+Dan Oyelaran: Roughly ninety percent single-transcript reads, ten percent search.
+Arjun Balan: And is search across a whole organisation or just a user's own meetings?
+Dan Oyelaran: Organisation-wide, with permissions.
+Arjun Balan: Okay. Permissions on search is the part I'd expect to get hardest, so I'll come back to it.
+Dan Oyelaran: Good instinct. Carry on.
+Arjun Balan: Ten thousand meetings at forty minutes is about six thousand seven hundred hours of audio a day.
+Arjun Balan: If transcription runs at, say, five times real time on a GPU worker, that's roughly 1300 GPU-hours a day.
+Dan Oyelaran: You're doing the capacity maths before the boxes. Why?
+Arjun Balan: Because it tells me whether this is a queue problem or a cost problem, and it's clearly a cost problem.
+Arjun Balan: 1300 GPU-hours a day is the dominant line item. Everything else is rounding.
+Dan Oyelaran: That's the right read. So what do you do about it?
+Arjun Balan: A few things. Batch aggressively, since latency tolerance is minutes not seconds.
+Arjun Balan: Use spot or preemptible instances, because a job that dies can just be retried.
+Arjun Balan: And make the queue priority-aware so a paying enterprise customer isn't behind a free-tier backlog.
+Dan Oyelaran: How do you handle a spot instance dying halfway through a forty minute file?
+Arjun Balan: I'd chunk the audio first. Say two-minute chunks with a few seconds of overlap.
+Arjun Balan: Each chunk is an independent unit of work, so losing one costs two minutes, not forty.
+Dan Oyelaran: Why the overlap?
+Arjun Balan: Because a hard cut in the middle of a word produces garbage at both boundaries.
+Arjun Balan: With overlap you can stitch and pick the better of the two transcriptions at the seam.
+Dan Oyelaran: Good. What's your storage layout?
+Arjun Balan: Audio in object storage, transcripts in a relational database, search in a dedicated index.
+Arjun Balan: I'd resist putting transcripts only in the search index. That makes the index the source of truth and it shouldn't be.
+Dan Oyelaran: Say more about why.
+Arjun Balan: Search indexes get rebuilt, reindexed, and occasionally corrupted. You want to be able to throw one away.
+Arjun Balan: If it's the only copy of the data, you can't.
+Dan Oyelaran: Agreed. Now the permissions question you flagged earlier.
+Arjun Balan: Right. The naive approach is to search everything and filter results afterwards.
+Arjun Balan: That breaks pagination badly. You ask for ten results, filter out eight, and now you don't know what to do.
+Dan Oyelaran: What's the alternative?
+Arjun Balan: Push the permission filter into the query itself, as a filter on the index.
+Arjun Balan: Store the set of principals who can see each document alongside it.
+Dan Oyelaran: What's the cost of that?
+Arjun Balan: Writes get more expensive. If someone joins a team you may have to update a lot of documents.
+Arjun Balan: I'd model it as group identifiers rather than user identifiers so membership changes don't touch documents at all.
+Dan Oyelaran: That's the answer I was hoping for. How would you test any of this?
+Arjun Balan: The chunking and stitching logic I'd unit test with synthetic audio where I know the right answer.
+Arjun Balan: The permission filter I'd test with a property-based test. Generate random org structures and assert nobody sees what they shouldn't.
+Dan Oyelaran: Why property-based rather than example-based?
+Arjun Balan: Because permission bugs live in combinations nobody thought to write a test case for.
+Dan Oyelaran: Let me push on something. You said organisation-wide search, permissions in the index.
+Dan Oyelaran: What happens when a user's access is revoked at 9am and the index hasn't caught up until 9:05?
+Arjun Balan: That's a real hole and I don't think you can close it entirely at the index layer.
+Arjun Balan: I'd do a second check at read time, when we fetch the actual documents to display.
+Arjun Balan: The index filter is for correctness of pagination, the read check is for correctness of access.
+Dan Oyelaran: So you accept the index can be briefly wrong.
+Arjun Balan: Yes, as long as being wrong only ever leaks a count, never content.
+Dan Oyelaran: That's a mature answer. Most people either miss it or try to make the index transactional.
+Arjun Balan: Making it transactional would be my instinct too, but the coupling cost is enormous.
+Dan Oyelaran: Last question. What part of this design are you least confident about?
+Arjun Balan: The stitching at chunk boundaries. I've described it as if it's simple and I don't think it is.
+Arjun Balan: Speaker diarisation across a boundary especially. The same voice can get two different labels.
+Dan Oyelaran: That's exactly right, and it's the thing that bites people in production.
+Dan Oyelaran: Good. Do you have questions for me?
+Arjun Balan: What's the thing about working here that you'd change if you could?
+Dan Oyelaran: We ship faster than we document. It costs us every time somebody new joins.
+Arjun Balan: Is that being actively worked on or is it accepted?
+Dan Oyelaran: Actively, but slowly. I'd rather tell you that than pretend it's solved.
+Arjun Balan: I appreciate that. That's all from me.
+Dan Oyelaran: We'll follow up by Wednesday with next steps. Thanks Arjun, that was a strong conversation.

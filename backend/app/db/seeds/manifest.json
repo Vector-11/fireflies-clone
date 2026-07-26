@@ -1,0 +1,132 @@
+{
+  "owner": {
+    "name": "Priyanshu Kumar",
+    "email": "priyanshu@fireflies.demo",
+    "job_title": "Product Engineer",
+    "timezone": "Asia/Kolkata",
+    "avatar_url": null
+  },
+  "meetings": [
+    {
+      "file": "weekly-product-sync.txt",
+      "title": "Weekly Product Sync",
+      "meeting_type": "Team Meeting",
+      "days_ago": 1,
+      "start_hour": 10,
+      "start_minute": 0,
+      "words_per_minute": 130,
+      "calendar_type": "google",
+      "meeting_link": "https://meet.google.com/demo-prod-sync",
+      "tags": ["Product", "Roadmap", "Mobile"],
+      "participants": [
+        { "name": "Maya Chen", "email": "maya.chen@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Priyanshu Kumar", "email": "priyanshu@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Dan Oyelaran", "email": "dan.oyelaran@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Ravi Menon", "email": "ravi.menon@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Tom Becker", "email": "tom.becker@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Sofia Reyes", "email": "sofia.reyes@fireflies.demo", "is_fireflies_user": true }
+      ]
+    },
+    {
+      "file": "engineering-standup.txt",
+      "title": "Engineering Standup",
+      "meeting_type": "Standup",
+      "days_ago": 2,
+      "start_hour": 9,
+      "start_minute": 30,
+      "words_per_minute": 160,
+      "calendar_type": "google",
+      "meeting_link": "https://meet.google.com/demo-eng-standup",
+      "tags": ["Engineering"],
+      "participants": [
+        { "name": "Dan Oyelaran", "email": "dan.oyelaran@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Priyanshu Kumar", "email": "priyanshu@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Ravi Menon", "email": "ravi.menon@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Tom Becker", "email": "tom.becker@fireflies.demo", "is_fireflies_user": true }
+      ]
+    },
+    {
+      "file": "acme-discovery-call.txt",
+      "title": "Discovery Call — Acme Corp",
+      "meeting_type": "Sales Call",
+      "days_ago": 4,
+      "start_hour": 15,
+      "start_minute": 0,
+      "words_per_minute": 125,
+      "calendar_type": "outlook",
+      "meeting_link": "https://zoom.us/j/demo-acme-discovery",
+      "tags": ["Sales", "Discovery", "Enterprise"],
+      "participants": [
+        { "name": "Sofia Reyes", "email": "sofia.reyes@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Jordan Wells", "email": "jordan.wells@acmecorp.example", "is_fireflies_user": false },
+        { "name": "Priya Nair", "email": "priya.nair@acmecorp.example", "is_fireflies_user": false }
+      ]
+    },
+    {
+      "file": "search-infra-design-review.txt",
+      "title": "Design Review — Transcript Search Infrastructure",
+      "meeting_type": "Design Review",
+      "days_ago": 6,
+      "start_hour": 14,
+      "start_minute": 0,
+      "words_per_minute": 110,
+      "calendar_type": "google",
+      "meeting_link": "https://meet.google.com/demo-search-design",
+      "tags": ["Engineering", "Architecture", "Search"],
+      "participants": [
+        { "name": "Dan Oyelaran", "email": "dan.oyelaran@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Priyanshu Kumar", "email": "priyanshu@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Ravi Menon", "email": "ravi.menon@fireflies.demo", "is_fireflies_user": true }
+      ]
+    },
+    {
+      "file": "backend-engineer-interview.txt",
+      "title": "Interview — Senior Backend Engineer",
+      "meeting_type": "Interview",
+      "days_ago": 8,
+      "start_hour": 11,
+      "start_minute": 30,
+      "words_per_minute": 120,
+      "calendar_type": "google",
+      "meeting_link": "https://meet.google.com/demo-interview-arjun",
+      "tags": ["Hiring", "Engineering"],
+      "participants": [
+        { "name": "Dan Oyelaran", "email": "dan.oyelaran@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Arjun Balan", "email": "arjun.balan@candidate.example", "is_fireflies_user": false }
+      ]
+    },
+    {
+      "file": "q3-pipeline-review.txt",
+      "title": "Q3 Pipeline Review",
+      "meeting_type": "Business Review",
+      "days_ago": 11,
+      "start_hour": 16,
+      "start_minute": 0,
+      "words_per_minute": 130,
+      "calendar_type": "outlook",
+      "meeting_link": "https://zoom.us/j/demo-q3-pipeline",
+      "tags": ["Sales", "Revenue", "Planning"],
+      "participants": [
+        { "name": "Elena Petrova", "email": "elena.petrova@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Sofia Reyes", "email": "sofia.reyes@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Priyanshu Kumar", "email": "priyanshu@fireflies.demo", "is_fireflies_user": true }
+      ]
+    },
+    {
+      "file": "investor-update-q3.txt",
+      "title": "Q3 Investor Update — Northstar Ventures",
+      "meeting_type": "Investor Update",
+      "days_ago": 14,
+      "start_hour": 17,
+      "start_minute": 30,
+      "words_per_minute": 125,
+      "calendar_type": "outlook",
+      "meeting_link": "https://zoom.us/j/demo-investor-q3",
+      "tags": ["Leadership", "Revenue", "Planning"],
+      "participants": [
+        { "name": "Elena Petrova", "email": "elena.petrova@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Marcus Hale", "email": "marcus.hale@northstar.example", "is_fireflies_user": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+Elena Petrova: Right, Q3 pipeline review. Sofia, take us through the top of the funnel first.
+Sofia Reyes: We closed the quarter at 1.42 million in new ARR against a target of 1.5 million.
+Sofia Reyes: So we came in at 95% of plan, which I'd call a solid miss rather than a bad one.
+Elena Petrova: What's the shape of that? One big deal that slipped, or broad softness?
+Sofia Reyes: One deal. Northwind was 180k and it slipped into October at the very last step.
+Elena Petrova: Slipped why? Was it budget or was it us?
+Sofia Reyes: Their CFO left three weeks before signature and the replacement froze all new spend for sixty days.
+Sofia Reyes: Nothing we did wrong, but also nothing we could have controlled, which is the frustrating part.
+Elena Petrova: Is it still live?
+Sofia Reyes: It's still live. The champion is intact and they've asked us to re-engage on the 15th of October.
+Sofia Reyes: I'd put it at 70% for Q4.
+Elena Petrova: Okay. What about the rest of the book?
+Sofia Reyes: Excluding Northwind we actually beat plan by about 9%, so the underlying motion is healthy.
+Sofia Reyes: Win rate on qualified opportunities was 31%, up from 24% last quarter.
+Priyanshu Kumar: What changed to move win rate that much? That's a big jump.
+Sofia Reyes: Two things. We got much stricter about qualifying out early, so the denominator is cleaner.
+Sofia Reyes: And the security questionnaire stopped being a two-week black hole once we published the trust page.
+Elena Petrova: That's a good example of a small investment with a disproportionate return.
+Sofia Reyes: It genuinely was. Average time from demo to close dropped from 47 days to 33.
+Elena Petrova: Let's talk about where Q4 comes from. What's actually in the pipeline right now?
+Sofia Reyes: Total pipeline is 4.1 million. Weighted, it's about 1.6 million.
+Sofia Reyes: Target for Q4 is 1.8, so we're short on coverage and I want to be upfront about that.
+Elena Petrova: How short in terms of new pipeline needed?
+Sofia Reyes: I need roughly 900k of new qualified pipeline in the next six weeks to feel comfortable.
+Priyanshu Kumar: What's the current source mix? Where is qualified pipeline actually coming from?
+Sofia Reyes: About 45% inbound, 30% outbound, 15% partner, 10% existing customer expansion.
+Sofia Reyes: The expansion number is embarrassingly low given how much of the base is under-penetrated.
+Elena Petrova: That's the one I'd focus on. Expanding an existing account should be far cheaper than a new logo.
+Sofia Reyes: Agreed. I've got 60 accounts that bought fewer than 20 seats and have grown headcount since.
+Sofia Reyes: Nobody has systematically worked that list.
+Elena Petrova: Why not?
+Sofia Reyes: Honestly, no owner. Everyone's comped on new logos so nobody touches it.
+Elena Petrova: Then that's a compensation problem, not an effort problem. Let me take that away.
+Elena Petrova: I'll work with finance on an expansion component in the Q4 plan.
+Sofia Reyes: If you do that I'll build the target account list this week so we're ready to run.
+Priyanshu Kumar: I can help there. We have usage data that shows which accounts are hitting seat limits.
+Priyanshu Kumar: I'll pull a report of accounts where seat utilisation is above 85%.
+Sofia Reyes: That would be genuinely useful. Those are the warmest possible conversations.
+Elena Petrova: Good. What about outbound? 30% feels low for the size of the team.
+Sofia Reyes: It is low. Our reply rate collapsed from 4.2% to 1.8% over the quarter.
+Elena Petrova: Any theory why?
+Sofia Reyes: The sequences are stale and everyone in the category is sending the same three emails.
+Sofia Reyes: I want to test a much narrower approach, fewer accounts and genuinely researched messaging.
+Elena Petrova: I'd support that. What would you need?
+Sofia Reyes: Nothing extra, just permission to cut the volume target and be judged on meetings booked instead.
+Elena Petrova: Done. Change the metric.
+Priyanshu Kumar: One thing worth flagging from the product side. Mobile keeps coming up in enterprise deals.
+Priyanshu Kumar: We discussed it in the product sync, we're two weeks out from a private beta.
+Sofia Reyes: That helps. It's come up in four conversations this month and been a real objection in two.
+Elena Petrova: Let's make sure that's tracked properly rather than anecdotally.
+Sofia Reyes: I'll add a lost-reason field for missing features so we can actually quantify it next quarter.
+Elena Petrova: Yes. Anecdote is fine for a hypothesis, it's not fine for a roadmap.
+Elena Petrova: Last thing, renewals. What's up for renewal in Q4 and what's at risk?
+Sofia Reyes: 780k up for renewal. I'd call 120k of that genuinely at risk across three accounts.
+Sofia Reyes: All three have had low usage for two consecutive months.
+Elena Petrova: Have we contacted them?
+Sofia Reyes: Not systematically, which is the honest answer.
+Elena Petrova: Then let's fix that this week. Low usage two months before renewal is a five-alarm fire.
+Sofia Reyes: I'll set up executive calls with all three before the end of next week.
+Priyanshu Kumar: I'll look at what those accounts are actually doing in the product and see if there's a pattern.
+Elena Petrova: Good. To summarise, we finished at 95% of plan with one controllable-ish slip.
+Elena Petrova: Q4 needs 900k of new pipeline, expansion becomes a real motion with real comp behind it.
+Elena Petrova: And we get ahead of three at-risk renewals starting this week.
+Sofia Reyes: That's my read too. I'll send the updated forecast by Wednesday.
+Elena Petrova: Thanks Sofia. Good quarter overall, genuinely.

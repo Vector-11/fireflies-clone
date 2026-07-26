@@ -1,0 +1,68 @@
+Elena Petrova: Thanks for joining. I'll keep this to thirty minutes and leave time for questions at the end.
+Elena Petrova: Headline first, because I'd rather you hear the bad news from me than find it on slide nine.
+Elena Petrova: We finished Q3 at 1.42 million in new ARR against a 1.5 million plan. That's 95%.
+Marcus Hale: What's the one-line explanation?
+Elena Petrova: One 180,000 dollar deal slipped into October because the customer's CFO left.
+Elena Petrova: Excluding it we were 9% ahead of plan, but I don't want to lean on that too hard. A miss is a miss.
+Marcus Hale: Is the deal recoverable?
+Elena Petrova: We think so. Champion intact, re-engaging on the 15th of October. I'd call it 70%.
+Marcus Hale: Understood. Carry on.
+Elena Petrova: Total ARR now stands at 8.6 million, up from 7.2 at the end of Q2.
+Elena Petrova: Net revenue retention is 112%, which is up 4 points from last quarter.
+Marcus Hale: That NRR number is the one I care most about. What moved it?
+Elena Petrova: Mostly reduced churn rather than expansion. Gross churn came down from 1.4% to 0.9% monthly.
+Elena Petrova: Expansion is genuinely underdeveloped and it's the single biggest thing we're fixing this quarter.
+Marcus Hale: Why underdeveloped? You have the usage data to know who to talk to.
+Elena Petrova: We had the data and no incentive. Nobody was compensated on expansion so nobody worked it.
+Elena Petrova: We're changing the comp plan in Q4. It's a straightforward fix and I'm slightly embarrassed it took this long.
+Marcus Hale: That's a good kind of problem to have. What's the size of the opportunity?
+Elena Petrova: Sixty accounts under twenty seats that have grown headcount since purchase.
+Elena Petrova: If we convert a third of them at typical expansion size that's roughly 400,000 in ARR.
+Marcus Hale: With essentially no acquisition cost.
+Elena Petrova: Correct, which is why it's the priority.
+Elena Petrova: On efficiency, burn was 620,000 a month across the quarter, against 680 last quarter.
+Elena Petrova: Runway at current burn is 19 months. With the Q4 plan it's about 16.
+Marcus Hale: Are you comfortable at 16?
+Elena Petrova: I'd be uncomfortable below 12, so yes, but it's the number I watch weekly.
+Marcus Hale: What would you do if growth stalled for two quarters?
+Elena Petrova: Cut the outbound team, freeze hiring, and extend to about 24 months. I've modelled it.
+Elena Petrova: I'd rather have the plan and not need it.
+Marcus Hale: Good. Let's talk about product. What actually shipped this quarter?
+Elena Petrova: Three things that mattered. Workspace permissions, the trust and security page, and the sample workspace onboarding.
+Elena Petrova: The onboarding change moved activation from 31% to 38%.
+Marcus Hale: Is that causal or correlated?
+Elena Petrova: Correlated so far. We're running a proper split test now and I'll have a real answer in two weeks.
+Marcus Hale: I appreciate you drawing that distinction rather than claiming the win.
+Elena Petrova: The trust page had a more measurable effect. Time from demo to close dropped from 47 days to 33.
+Marcus Hale: That's a significant compression. Was security genuinely the bottleneck?
+Elena Petrova: It was the single longest stage in the funnel and now it isn't. That one page paid for itself many times over.
+Elena Petrova: On headcount, we're at 34 people, up from 29.
+Elena Petrova: Five engineers, one designer, and we're actively hiring two more backend engineers.
+Marcus Hale: How's the hiring market treating you?
+Elena Petrova: Better than last year. We're seeing genuinely strong candidates at the senior level.
+Elena Petrova: Dan interviewed someone this week he rated as one of the best systems conversations he's had.
+Marcus Hale: What's the biggest risk you're carrying right now? Be honest.
+Elena Petrova: Mobile. Enterprise buyers keep asking and we don't have it.
+Elena Petrova: It's been raised in four deals this quarter and was a real objection in two of them.
+Marcus Hale: What's the timeline?
+Elena Petrova: Private beta in two weeks with one design partner, general beta after that.
+Elena Petrova: We delayed it deliberately because the offline handling wasn't safe. Losing someone's recording is unrecoverable trust damage.
+Marcus Hale: I think that's the right call even though it costs you a quarter.
+Elena Petrova: The second risk is that our category is getting crowded very quickly.
+Elena Petrova: Three well-funded competitors launched adjacent products in the last six months.
+Marcus Hale: How are you thinking about differentiation?
+Elena Petrova: Not on transcription quality. That's commoditised and anyone claiming otherwise is selling something.
+Elena Petrova: We differentiate on what happens after the meeting. Search, structure, and getting it into the tools people already use.
+Marcus Hale: That's the right instinct. The transcript is the input, not the product.
+Elena Petrova: Exactly how we think about it internally.
+Elena Petrova: For Q4, the plan is 1.8 million in new ARR, expansion as a funded motion, and mobile in general beta.
+Elena Petrova: We need about 900,000 in new qualified pipeline over the next six weeks to make the number.
+Marcus Hale: Is that achievable or aspirational?
+Elena Petrova: Achievable but tight. I'd put it at 65%.
+Marcus Hale: I'd rather have a 65% you believe than a 90% you don't.
+Elena Petrova: Then that's what you'll get from me every quarter.
+Marcus Hale: Two asks from my side. Send me the cohort retention curves by segment.
+Marcus Hale: And I'd like to see the expansion pipeline broken out separately in the next update.
+Elena Petrova: I'll get both to you by the end of next week.
+Marcus Hale: Good quarter overall. The NRR trend is what matters and it's going the right way.
+Elena Petrova: Thanks Marcus. I'll send the written update and the deck this afternoon.

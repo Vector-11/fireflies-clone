@@ -1,0 +1,62 @@
+Sofia Reyes: Thanks for making the time, Jordan. Before I show you anything, I'd rather understand what's actually going on.
+Jordan Wells: Sure. And Priya's joining because she runs the team that would actually use this.
+Priya Nair: Hi, yes. I run customer success, about fourteen people.
+Sofia Reyes: Perfect. So what made you take this call? Something must have prompted it.
+Jordan Wells: Honestly, a bad quarterly business review. We walked into a renewal conversation and had no idea what had been promised.
+Jordan Wells: Three different people had spoken to that customer over six months and none of it was written down anywhere useful.
+Priya Nair: It's worse than that. Two of those people have since left the company.
+Sofia Reyes: So the knowledge left with them.
+Priya Nair: Completely. We lost a 90,000 dollar account and the post-mortem was basically "nobody knew what we'd committed to".
+Sofia Reyes: That's a painful way to learn it. How are you handling meeting notes today?
+Priya Nair: Everyone takes their own. Some people use Notion, some use a notebook, one person genuinely uses email drafts.
+Jordan Wells: We mandated a template about a year ago. Compliance was maybe 20% and it decayed from there.
+Sofia Reyes: That's very normal. Templates fail because they add work at exactly the moment people are least willing to do it.
+Priya Nair: That's exactly it. You finish a hard call and the last thing you want is a form.
+Sofia Reyes: How many customer calls does your team do in a week, roughly?
+Priya Nair: Between 60 and 80 across the team. More at quarter end.
+Sofia Reyes: And how long does a call typically run?
+Priya Nair: Half an hour for a check-in, an hour for a QBR.
+Jordan Wells: Which is a lot of conversation disappearing into nothing.
+Sofia Reyes: Let me ask a harder question. If you had a perfect record of every call, what would you actually do with it?
+Jordan Wells: That's a good question. I think the honest answer is two things.
+Jordan Wells: One, I want to walk into a renewal knowing what we said. Two, I want to spot churn risk before it's terminal.
+Priya Nair: I'd add a third. I want to coach my team, and right now I can only coach the calls I personally sit in on.
+Sofia Reyes: That third one is interesting. How often do you sit in on calls now?
+Priya Nair: Maybe two a week out of seventy. So I'm coaching from a 3% sample.
+Sofia Reyes: And presumably the calls you sit in on are the ones people expect you to sit in on.
+Priya Nair: Yes. Nobody invites me to the messy ones.
+Jordan Wells: What does your product actually do about the churn risk piece? That's the one I care most about.
+Sofia Reyes: I'll be straight with you rather than overselling. We don't predict churn.
+Sofia Reyes: What we do is make the signals searchable. If four customers said "pricing" and "competitor" in the same month, you can find that.
+Jordan Wells: That's more useful than a score I don't trust anyway.
+Sofia Reyes: That's been our experience. Scores get ignored, searchable evidence gets acted on.
+Priya Nair: How does it handle the recording itself? A lot of our calls are on Zoom but some are on Teams.
+Sofia Reyes: Both are supported. It joins as a participant, so the customer does see it in the attendee list.
+Priya Nair: That's a concern actually. Some of our customers are quite sensitive about being recorded.
+Sofia Reyes: That's a fair concern and I won't pretend it away. It's visible and it does change the room sometimes.
+Sofia Reyes: Most teams handle it by mentioning it in the first thirty seconds and moving on.
+Jordan Wells: What about compliance? We're in financial services, so I have to ask.
+Sofia Reyes: SOC 2 Type II, GDPR, and data residency options. I'll send the full trust documentation after this.
+Jordan Wells: Please do. Our security review is genuinely the long pole in any purchase.
+Sofia Reyes: How long does that typically take on your side?
+Jordan Wells: Six to eight weeks if we start now. Longer if we start in December.
+Sofia Reyes: Then let's start the security review in parallel rather than sequentially, if you're open to it.
+Jordan Wells: I'd be open to that if the commercial shape looks reasonable.
+Sofia Reyes: What does reasonable look like for a team of fourteen?
+Jordan Wells: I don't have a number in mind. What I'd say is that anything over about 25,000 a year needs board visibility.
+Sofia Reyes: That's helpful to know. Fourteen seats would land under that.
+Priya Nair: Would we need to buy for the whole team on day one?
+Sofia Reyes: No, and I'd actually recommend against it. Start with five people for six weeks.
+Priya Nair: Why five rather than everyone?
+Sofia Reyes: Because if it doesn't work for five it won't work for fourteen, and you'll have spent less finding out.
+Jordan Wells: That's a refreshingly honest pitch.
+Sofia Reyes: It's also self-interested. Rollouts that start too big are the ones that churn at renewal.
+Jordan Wells: Fine. What would the next step be?
+Sofia Reyes: I'll send the trust documentation today and a pilot proposal for five seats by Thursday.
+Sofia Reyes: If it looks right, we kick off the security review the same week.
+Priya Nair: Can we see it working on a real call before we commit to anything?
+Sofia Reyes: Yes. I'll set up a working session where we run it against one of your actual calls.
+Priya Nair: That would settle it for me more than any demo would.
+Jordan Wells: Agreed. Let's do that in the next two weeks.
+Sofia Reyes: I'll send times tomorrow. Thank you both, this was genuinely useful for me too.
+Jordan Wells: Likewise. Speak soon.
