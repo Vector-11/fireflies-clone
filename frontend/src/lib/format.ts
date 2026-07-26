@@ -94,7 +94,7 @@ export function formatShortDate(iso: string, timeZone?: string): string {
   }).format(date);
 }
 
-/** Up to two initials, e.g. "Priyanshu Kumar" -> "PK". */
+/** Up to two initials, e.g. "Priyanshu Giri" -> "PG". */
 export function initials(name: string | null | undefined, fallback = "?"): string {
   if (!name?.trim()) return fallback;
   const parts = name.trim().split(/\s+/);

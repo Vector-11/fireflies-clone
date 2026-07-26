@@ -1,13 +1,13 @@
 Dan Oyelaran: Standup, let's keep it tight. Blockers first, updates second.
-Priyanshu Kumar: No blockers. FTS5 search is behind a flag on staging, I'm collecting latency numbers today.
+Priyanshu Giri: No blockers. FTS5 search is behind a flag on staging, I'm collecting latency numbers today.
 Dan Oyelaran: Any surprises versus the prototype?
-Priyanshu Kumar: One. Snippet generation is slower than I expected on very long sentences, about 30 milliseconds.
-Priyanshu Kumar: Still nothing compared to the old path, but I'll look at capping snippet length.
+Priyanshu Giri: One. Snippet generation is slower than I expected on very long sentences, about 30 milliseconds.
+Priyanshu Giri: Still nothing compared to the old path, but I'll look at capping snippet length.
 Ravi Menon: I'm blocked, actually. The A/B test needs an event I don't have.
 Ravi Menon: There's no event fired when someone opens the sample workspace, so I can't split on it.
-Priyanshu Kumar: That's a small change, I can add it. Where does it need to land?
+Priyanshu Giri: That's a small change, I can add it. Where does it need to land?
 Ravi Menon: Client side is fine. Just needs a workspace type on the payload.
-Priyanshu Kumar: I'll do it this morning and let you know when it's deployed.
+Priyanshu Giri: I'll do it this morning and let you know when it's deployed.
 Dan Oyelaran: Good. Ravi, does that unblock the two-week estimate or does the clock restart?
 Ravi Menon: Clock restarts from when the event ships, so realistically results in the first week of next month.
 Dan Oyelaran: Fine, as long as we say that out loud rather than letting the date quietly slip.
@@ -15,12 +15,12 @@ Tom Becker: No blockers. The outage state redesign is done, I'll put it up for r
 Tom Becker: I also did the demo labelling on the sample workspace, that's a much smaller change than expected.
 Dan Oyelaran: Nice. Anything you need from engineering to get those built?
 Tom Becker: Just someone to pick them up. Neither is more than an afternoon.
-Priyanshu Kumar: I'll take the demo label once the search work is merged.
+Priyanshu Giri: I'll take the demo label once the search work is merged.
 Dan Oyelaran: My update. The migration lint rule is merged and it already caught something.
 Dan Oyelaran: Somebody had a migration adding an index on the transcripts table with no lock timeout.
 Ravi Menon: On transcripts? That would have been a very bad afternoon.
 Dan Oyelaran: It would have locked the biggest table we have during business hours.
-Priyanshu Kumar: That's the rule paying for itself in under a week.
+Priyanshu Giri: That's the rule paying for itself in under a week.
 Dan Oyelaran: Crash reporting for mobile is also wired up, so the private beta can go ahead whenever the offline work lands.
 Tom Becker: How's offline going? That's the thing I keep hearing about.
 Dan Oyelaran: Roughly halfway. The write-ahead buffer works, the recovery path on reconnect does not yet.
@@ -28,5 +28,5 @@ Dan Oyelaran: Still tracking to the two week estimate but I wouldn't say it's co
 Ravi Menon: Anything the rest of us can take off you?
 Dan Oyelaran: Not really, it's one person's head in one problem. I'll shout if that changes.
 Dan Oyelaran: Last thing. Sofia needs a report of accounts above 85% seat utilisation for the expansion push.
-Priyanshu Kumar: I said I'd do that. It's a query, not a project. I'll have it to her by Thursday.
+Priyanshu Giri: I said I'd do that. It's a query, not a project. I'll have it to her by Thursday.
 Dan Oyelaran: Perfect. That's everything, thanks all.

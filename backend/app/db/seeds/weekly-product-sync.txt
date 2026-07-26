@@ -1,13 +1,13 @@
 Maya Chen: Morning everyone, let's get started. We've got about thirty minutes and three things to get through.
 Maya Chen: Quick roadmap check, the onboarding funnel numbers, and then the mobile beta decision.
-Priyanshu Kumar: Sounds good. Do we want to keep the roadmap review short? I think most of it is unchanged from last week.
+Priyanshu Giri: Sounds good. Do we want to keep the roadmap review short? I think most of it is unchanged from last week.
 Maya Chen: Yes, five minutes at most. Dan, anything moved?
 Dan Oyelaran: Two things moved. The notifications rework slipped a sprint because we lost most of last week to the incident.
 Dan Oyelaran: And the workspace permissions work came in early, which almost cancels it out.
 Maya Chen: What caused the incident exactly? I saw the summary but not the root cause.
 Dan Oyelaran: A migration locked the sessions table for about eleven minutes during peak traffic on Tuesday.
 Dan Oyelaran: Nobody lost data but roughly four thousand users saw errors while it ran.
-Priyanshu Kumar: Do we have a guardrail against that now, or is it still a review-and-hope situation?
+Priyanshu Giri: Do we have a guardrail against that now, or is it still a review-and-hope situation?
 Dan Oyelaran: Still review-and-hope. I'll add a migration lint rule that blocks anything without an explicit lock timeout.
 Dan Oyelaran: I can have that in by Thursday, it's not a big change.
 Maya Chen: Good. Let's make that an action item so it doesn't disappear into the backlog.
@@ -19,12 +19,12 @@ Ravi Menon: That's the biggest single jump we've had since we started tracking i
 Maya Chen: That's a great number. What drove it?
 Ravi Menon: Almost entirely the new sample workspace. Users who open a sample workspace activate at 61%.
 Ravi Menon: Users who skip it activate at 22%. That gap has been stable for three weeks, so I don't think it's noise.
-Priyanshu Kumar: Is that causal though, or are the motivated users just the ones who click into the sample?
+Priyanshu Giri: Is that causal though, or are the motivated users just the ones who click into the sample?
 Ravi Menon: Fair challenge. It's correlational right now. I'd want a proper split test before we claim causality.
 Ravi Menon: I'll set up an A/B test where half the cohort gets the sample workspace auto-opened.
 Maya Chen: How long would that take to reach significance?
 Ravi Menon: At current signup volume, about two weeks for a five point difference.
-Priyanshu Kumar: That's worth doing. If it holds up it changes where we spend the next quarter.
+Priyanshu Giri: That's worth doing. If it holds up it changes where we spend the next quarter.
 Tom Becker: One thing I noticed watching session recordings. People open the sample workspace and immediately look for a way to delete it.
 Tom Becker: They think it's clutter in their real account. We should label it more clearly as a demo.
 Maya Chen: That's a small fix with a real payoff. Tom, can you take that?
@@ -34,30 +34,30 @@ Ravi Menon: Desktop alone would be closer to 44%.
 Maya Chen: Which is a perfect segue. Let's talk about the mobile beta.
 Dan Oyelaran: So the app is functionally complete. Recording works, playback works, the transcript view works.
 Dan Oyelaran: What's not done is offline handling and push notifications.
-Priyanshu Kumar: Are those blockers for a beta, or blockers for launch?
+Priyanshu Giri: Are those blockers for a beta, or blockers for launch?
 Dan Oyelaran: Push is a blocker for launch, not for beta. Offline I'd argue is a blocker for both.
 Dan Oyelaran: If you lose signal mid-meeting right now the recording just stops and there's no recovery.
 Tom Becker: That's the kind of bug that makes someone uninstall and never come back.
 Maya Chen: Agreed, that's not shippable. How long to fix offline properly?
 Dan Oyelaran: Two weeks if we do it properly with a local write-ahead buffer. Three days if we just show a warning banner.
-Priyanshu Kumar: I'd rather delay the beta by two weeks than ship something that loses people's meetings.
+Priyanshu Giri: I'd rather delay the beta by two weeks than ship something that loses people's meetings.
 Maya Chen: I think that's right. Does anyone disagree?
 Sofia Reyes: I'll push back slightly. I have four enterprise prospects who asked specifically about mobile this month.
 Sofia Reyes: Two of them said it would materially affect the decision.
 Maya Chen: How firm is that? Is mobile a nice-to-have in the deal or a requirement?
 Sofia Reyes: For one of them it's a requirement. Their field team doesn't sit at desks.
-Priyanshu Kumar: Could we give that one account an early build under an NDA rather than opening a general beta?
+Priyanshu Giri: Could we give that one account an early build under an NDA rather than opening a general beta?
 Sofia Reyes: That would probably work, yes. They'd take a rough build if they knew it was rough.
 Maya Chen: Let's do that. Sofia, can you sound them out on a private beta this week?
 Sofia Reyes: I'll email them today and get an answer by Friday.
 Dan Oyelaran: If we're doing a private beta I want crash reporting wired up first. Otherwise we learn nothing.
 Dan Oyelaran: That's maybe half a day.
 Maya Chen: Fine. So the plan is offline buffer over the next two weeks, private beta for the one account, general beta after.
-Priyanshu Kumar: And we revisit the general beta date at the sync in two weeks, once we see how the offline work lands.
+Priyanshu Giri: And we revisit the general beta date at the sync in two weeks, once we see how the offline work lands.
 Maya Chen: Yes. Let me read back the actions so we're all clear.
 Maya Chen: Dan is adding the migration lock timeout lint rule by Thursday and wiring up crash reporting.
 Maya Chen: Ravi is setting up the sample workspace A/B test, results expected in about two weeks.
 Maya Chen: Tom is designing a friendlier outage state and a clearer demo label for the sample workspace by Monday.
 Maya Chen: Sofia is approaching the enterprise account about a private mobile beta and reporting back Friday.
-Priyanshu Kumar: And I'll write up the beta decision in the product channel so people outside this call know where we landed.
+Priyanshu Giri: And I'll write up the beta decision in the product channel so people outside this call know where we landed.
 Maya Chen: Perfect. Thanks everyone, that was a genuinely useful half hour.

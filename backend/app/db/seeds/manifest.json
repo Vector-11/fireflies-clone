@@ -1,6 +1,6 @@
 {
   "owner": {
-    "name": "Priyanshu Kumar",
+    "name": "Priyanshu Giri",
     "email": "priyanshu@fireflies.demo",
     "job_title": "Product Engineer",
     "timezone": "Asia/Kolkata",
@@ -20,7 +20,7 @@
       "tags": ["Product", "Roadmap", "Mobile"],
       "participants": [
         { "name": "Maya Chen", "email": "maya.chen@fireflies.demo", "is_fireflies_user": true },
-        { "name": "Priyanshu Kumar", "email": "priyanshu@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Priyanshu Giri", "email": "priyanshu@fireflies.demo", "is_fireflies_user": true },
         { "name": "Dan Oyelaran", "email": "dan.oyelaran@fireflies.demo", "is_fireflies_user": true },
         { "name": "Ravi Menon", "email": "ravi.menon@fireflies.demo", "is_fireflies_user": true },
         { "name": "Tom Becker", "email": "tom.becker@fireflies.demo", "is_fireflies_user": true },
@@ -40,7 +40,7 @@
       "tags": ["Engineering"],
       "participants": [
         { "name": "Dan Oyelaran", "email": "dan.oyelaran@fireflies.demo", "is_fireflies_user": true },
-        { "name": "Priyanshu Kumar", "email": "priyanshu@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Priyanshu Giri", "email": "priyanshu@fireflies.demo", "is_fireflies_user": true },
         { "name": "Ravi Menon", "email": "ravi.menon@fireflies.demo", "is_fireflies_user": true },
         { "name": "Tom Becker", "email": "tom.becker@fireflies.demo", "is_fireflies_user": true }
       ]
@@ -75,7 +75,7 @@
       "tags": ["Engineering", "Architecture", "Search"],
       "participants": [
         { "name": "Dan Oyelaran", "email": "dan.oyelaran@fireflies.demo", "is_fireflies_user": true },
-        { "name": "Priyanshu Kumar", "email": "priyanshu@fireflies.demo", "is_fireflies_user": true },
+        { "name": "Priyanshu Giri", "email": "priyanshu@fireflies.demo", "is_fireflies_user": true },
         { "name": "Ravi Menon", "email": "ravi.menon@fireflies.demo", "is_fireflies_user": true }
       ]
     },
@@ -109,7 +109,7 @@
       "participants": [
         { "name": "Elena Petrova", "email": "elena.petrova@fireflies.demo", "is_fireflies_user": true },
         { "name": "Sofia Reyes", "email": "sofia.reyes@fireflies.demo", "is_fireflies_user": true },
-        { "name": "Priyanshu Kumar", "email": "priyanshu@fireflies.demo", "is_fireflies_user": true }
+        { "name": "Priyanshu Giri", "email": "priyanshu@fireflies.demo", "is_fireflies_user": true }
       ]
     },
     {

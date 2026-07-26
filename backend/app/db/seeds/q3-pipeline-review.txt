@@ -12,7 +12,7 @@ Sofia Reyes: I'd put it at 70% for Q4.
 Elena Petrova: Okay. What about the rest of the book?
 Sofia Reyes: Excluding Northwind we actually beat plan by about 9%, so the underlying motion is healthy.
 Sofia Reyes: Win rate on qualified opportunities was 31%, up from 24% last quarter.
-Priyanshu Kumar: What changed to move win rate that much? That's a big jump.
+Priyanshu Giri: What changed to move win rate that much? That's a big jump.
 Sofia Reyes: Two things. We got much stricter about qualifying out early, so the denominator is cleaner.
 Sofia Reyes: And the security questionnaire stopped being a two-week black hole once we published the trust page.
 Elena Petrova: That's a good example of a small investment with a disproportionate return.
@@ -22,7 +22,7 @@ Sofia Reyes: Total pipeline is 4.1 million. Weighted, it's about 1.6 million.
 Sofia Reyes: Target for Q4 is 1.8, so we're short on coverage and I want to be upfront about that.
 Elena Petrova: How short in terms of new pipeline needed?
 Sofia Reyes: I need roughly 900k of new qualified pipeline in the next six weeks to feel comfortable.
-Priyanshu Kumar: What's the current source mix? Where is qualified pipeline actually coming from?
+Priyanshu Giri: What's the current source mix? Where is qualified pipeline actually coming from?
 Sofia Reyes: About 45% inbound, 30% outbound, 15% partner, 10% existing customer expansion.
 Sofia Reyes: The expansion number is embarrassingly low given how much of the base is under-penetrated.
 Elena Petrova: That's the one I'd focus on. Expanding an existing account should be far cheaper than a new logo.
@@ -33,8 +33,8 @@ Sofia Reyes: Honestly, no owner. Everyone's comped on new logos so nobody touche
 Elena Petrova: Then that's a compensation problem, not an effort problem. Let me take that away.
 Elena Petrova: I'll work with finance on an expansion component in the Q4 plan.
 Sofia Reyes: If you do that I'll build the target account list this week so we're ready to run.
-Priyanshu Kumar: I can help there. We have usage data that shows which accounts are hitting seat limits.
-Priyanshu Kumar: I'll pull a report of accounts where seat utilisation is above 85%.
+Priyanshu Giri: I can help there. We have usage data that shows which accounts are hitting seat limits.
+Priyanshu Giri: I'll pull a report of accounts where seat utilisation is above 85%.
 Sofia Reyes: That would be genuinely useful. Those are the warmest possible conversations.
 Elena Petrova: Good. What about outbound? 30% feels low for the size of the team.
 Sofia Reyes: It is low. Our reply rate collapsed from 4.2% to 1.8% over the quarter.
@@ -44,8 +44,8 @@ Sofia Reyes: I want to test a much narrower approach, fewer accounts and genuine
 Elena Petrova: I'd support that. What would you need?
 Sofia Reyes: Nothing extra, just permission to cut the volume target and be judged on meetings booked instead.
 Elena Petrova: Done. Change the metric.
-Priyanshu Kumar: One thing worth flagging from the product side. Mobile keeps coming up in enterprise deals.
-Priyanshu Kumar: We discussed it in the product sync, we're two weeks out from a private beta.
+Priyanshu Giri: One thing worth flagging from the product side. Mobile keeps coming up in enterprise deals.
+Priyanshu Giri: We discussed it in the product sync, we're two weeks out from a private beta.
 Sofia Reyes: That helps. It's come up in four conversations this month and been a real objection in two.
 Elena Petrova: Let's make sure that's tracked properly rather than anecdotally.
 Sofia Reyes: I'll add a lost-reason field for missing features so we can actually quantify it next quarter.
@@ -57,7 +57,7 @@ Elena Petrova: Have we contacted them?
 Sofia Reyes: Not systematically, which is the honest answer.
 Elena Petrova: Then let's fix that this week. Low usage two months before renewal is a five-alarm fire.
 Sofia Reyes: I'll set up executive calls with all three before the end of next week.
-Priyanshu Kumar: I'll look at what those accounts are actually doing in the product and see if there's a pattern.
+Priyanshu Giri: I'll look at what those accounts are actually doing in the product and see if there's a pattern.
 Elena Petrova: Good. To summarise, we finished at 95% of plan with one controllable-ish slip.
 Elena Petrova: Q4 needs 900k of new pipeline, expansion becomes a real motion with real comp behind it.
 Elena Petrova: And we get ahead of three at-risk renewals starting this week.

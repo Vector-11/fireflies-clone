@@ -1,67 +1,67 @@
 Dan Oyelaran: This is the design review for transcript search. Priyanshu wrote the doc, so I'll let him frame it.
-Priyanshu Kumar: The problem is simple to state. Search across transcripts is slow and the results are bad.
-Priyanshu Kumar: Right now we do a LIKE query with wildcards on both sides against the sentences table.
+Priyanshu Giri: The problem is simple to state. Search across transcripts is slow and the results are bad.
+Priyanshu Giri: Right now we do a LIKE query with wildcards on both sides against the sentences table.
 Ravi Menon: Which means no index can be used at all. It's a full scan every time.
-Priyanshu Kumar: Correct. At our current volume that's about 900 milliseconds at the median and four seconds at p99.
+Priyanshu Giri: Correct. At our current volume that's about 900 milliseconds at the median and four seconds at p99.
 Dan Oyelaran: And it gets linearly worse as we add transcripts, which we are doing quickly.
-Priyanshu Kumar: There's a second problem that I think is actually worse than the speed.
-Priyanshu Kumar: We can't rank. Every match is equally good, so we return them in whatever order the scan found them.
+Priyanshu Giri: There's a second problem that I think is actually worse than the speed.
+Priyanshu Giri: We can't rank. Every match is equally good, so we return them in whatever order the scan found them.
 Ravi Menon: Users read that as the product being broken, even when the right answer is on the page.
-Priyanshu Kumar: So the doc proposes three options and I want to argue for the second one.
-Priyanshu Kumar: Option one is to keep LIKE but add a trigram index. Option two is SQLite FTS5. Option three is a separate search service.
+Priyanshu Giri: So the doc proposes three options and I want to argue for the second one.
+Priyanshu Giri: Option one is to keep LIKE but add a trigram index. Option two is SQLite FTS5. Option three is a separate search service.
 Dan Oyelaran: Let's take them in order. What's wrong with trigrams?
-Priyanshu Kumar: Nothing fatal. It fixes the speed, it doesn't fix the ranking, and it roughly doubles our storage.
+Priyanshu Giri: Nothing fatal. It fixes the speed, it doesn't fix the ranking, and it roughly doubles our storage.
 Ravi Menon: And trigram indexes are miserable for short queries. A two-character search matches almost everything.
 Dan Oyelaran: Okay. And option three, the separate service?
-Priyanshu Kumar: It's the right answer eventually. It is not the right answer at four hundred thousand sentences.
-Priyanshu Kumar: We'd be adding a network hop, a sync pipeline, and a second thing that can be down.
+Priyanshu Giri: It's the right answer eventually. It is not the right answer at four hundred thousand sentences.
+Priyanshu Giri: We'd be adding a network hop, a sync pipeline, and a second thing that can be down.
 Ravi Menon: Also a second thing that can be silently out of sync, which is worse than down.
 Dan Oyelaran: That's the failure mode I'd worry about most. Search that confidently returns stale results.
-Priyanshu Kumar: Which brings me to FTS5. It's an extension that ships inside SQLite already.
-Priyanshu Kumar: We get an inverted index, bm25 relevance ranking, and snippet extraction, with no new infrastructure.
+Priyanshu Giri: Which brings me to FTS5. It's an extension that ships inside SQLite already.
+Priyanshu Giri: We get an inverted index, bm25 relevance ranking, and snippet extraction, with no new infrastructure.
 Dan Oyelaran: What does the schema actually look like?
-Priyanshu Kumar: A virtual table declared with content equals sentences, so it stores only the index and reads text by rowid.
-Priyanshu Kumar: That means we're not duplicating four hundred thousand rows of text.
+Priyanshu Giri: A virtual table declared with content equals sentences, so it stores only the index and reads text by rowid.
+Priyanshu Giri: That means we're not duplicating four hundred thousand rows of text.
 Ravi Menon: How does it stay in sync if it's not storing the content?
-Priyanshu Kumar: It doesn't, by itself. That's the one real cost. You have to write three triggers.
-Priyanshu Kumar: Insert, update and delete on the sentences table, each maintaining the index.
+Priyanshu Giri: It doesn't, by itself. That's the one real cost. You have to write three triggers.
+Priyanshu Giri: Insert, update and delete on the sentences table, each maintaining the index.
 Dan Oyelaran: Three triggers is a small amount of code but it's exactly the kind of thing that rots.
 Dan Oyelaran: What happens if someone adds a bulk import path that bypasses them?
-Priyanshu Kumar: Triggers fire on any SQL insert, so a bulk import through the ORM is still covered.
-Priyanshu Kumar: The gap is a direct file-level load, and for that there's a rebuild command we can run.
+Priyanshu Giri: Triggers fire on any SQL insert, so a bulk import through the ORM is still covered.
+Priyanshu Giri: The gap is a direct file-level load, and for that there's a rebuild command we can run.
 Ravi Menon: I'd want the rebuild to run after seeding regardless, as a guarantee rather than a hope.
-Priyanshu Kumar: Agreed, that's cheap. I'll make it unconditional after any bulk load.
+Priyanshu Giri: Agreed, that's cheap. I'll make it unconditional after any bulk load.
 Dan Oyelaran: What about the query side? How do we stop a user's apostrophe from breaking the query?
-Priyanshu Kumar: That's a real risk and I want to be explicit about it.
-Priyanshu Kumar: FTS5 MATCH takes a query language, not a string. Quotes, asterisks and the word OR are all syntax.
+Priyanshu Giri: That's a real risk and I want to be explicit about it.
+Priyanshu Giri: FTS5 MATCH takes a query language, not a string. Quotes, asterisks and the word OR are all syntax.
 Ravi Menon: So a user searching for a phrase in quotes would either error or silently do something unexpected.
-Priyanshu Kumar: Right. The fix is to tokenise the input ourselves and re-quote each token before it reaches MATCH.
-Priyanshu Kumar: That removes the entire class of injection and syntax errors in about six lines.
+Priyanshu Giri: Right. The fix is to tokenise the input ourselves and re-quote each token before it reaches MATCH.
+Priyanshu Giri: That removes the entire class of injection and syntax errors in about six lines.
 Dan Oyelaran: I like that. Never pass user text to a query language you didn't build a parser for.
-Priyanshu Kumar: The last token also gets a star suffix so type-ahead matches prefixes.
+Priyanshu Giri: The last token also gets a star suffix so type-ahead matches prefixes.
 Ravi Menon: Meaning someone typing p-r-i-c finds pricing before they finish the word.
-Priyanshu Kumar: Exactly. That's most of the perceived speed improvement, honestly.
+Priyanshu Giri: Exactly. That's most of the perceived speed improvement, honestly.
 Dan Oyelaran: What's the measured difference? Do we have numbers or is this theoretical?
-Priyanshu Kumar: I prototyped it against a copy of production. Median dropped from 900 milliseconds to 6.
-Priyanshu Kumar: The p99 went from about four seconds to 40 milliseconds.
+Priyanshu Giri: I prototyped it against a copy of production. Median dropped from 900 milliseconds to 6.
+Priyanshu Giri: The p99 went from about four seconds to 40 milliseconds.
 Dan Oyelaran: That's a two order of magnitude improvement. That's hard to argue with.
 Ravi Menon: What's the index size on that dataset?
-Priyanshu Kumar: About 18% of the size of the text itself, so roughly 60 megabytes. It's not a concern.
+Priyanshu Giri: About 18% of the size of the text itself, so roughly 60 megabytes. It's not a concern.
 Dan Oyelaran: What's the migration path? Do we need downtime?
-Priyanshu Kumar: No. Create the virtual table, create the triggers, run rebuild. Reads keep working throughout.
-Priyanshu Kumar: And given the incident last week, I'll add an explicit lock timeout to that migration.
+Priyanshu Giri: No. Create the virtual table, create the triggers, run rebuild. Reads keep working throughout.
+Priyanshu Giri: And given the incident last week, I'll add an explicit lock timeout to that migration.
 Dan Oyelaran: Good, that's exactly the lesson we should be taking from it.
 Ravi Menon: One question on portability. What happens if we ever move off SQLite?
-Priyanshu Kumar: Then we rewrite this. I'm not going to pretend otherwise.
-Priyanshu Kumar: But the search interface is one module, so what changes is one file, not the whole application.
+Priyanshu Giri: Then we rewrite this. I'm not going to pretend otherwise.
+Priyanshu Giri: But the search interface is one module, so what changes is one file, not the whole application.
 Dan Oyelaran: That's the right way to take the bet. Cheap to make, cheap to unwind.
 Ravi Menon: I'd also want a fallback. If FTS5 isn't compiled into the build, search shouldn't just crash.
-Priyanshu Kumar: Fair. I'll probe for it at startup and fall back to the old LIKE path if it's missing.
-Priyanshu Kumar: Degraded but working beats a stack trace.
+Priyanshu Giri: Fair. I'll probe for it at startup and fall back to the old LIKE path if it's missing.
+Priyanshu Giri: Degraded but working beats a stack trace.
 Dan Oyelaran: Alright, I'm convinced. Any objections to option two?
 Ravi Menon: None from me, with the rebuild and the fallback included.
 Dan Oyelaran: Then let's approve it. Priyanshu, what do you need and when can it land?
-Priyanshu Kumar: Nothing from anyone else. I'll have it behind a flag by next Wednesday.
+Priyanshu Giri: Nothing from anyone else. I'll have it behind a flag by next Wednesday.
 Dan Oyelaran: Let's plan to review the numbers together once it's live rather than assuming the prototype holds.
-Priyanshu Kumar: I'll put a dashboard together so we're looking at real latency, not my laptop.
+Priyanshu Giri: I'll put a dashboard together so we're looking at real latency, not my laptop.
 Dan Oyelaran: Perfect. Approved. Thanks both.
